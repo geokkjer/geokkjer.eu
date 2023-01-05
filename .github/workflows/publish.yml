@@ -17,7 +17,7 @@ jobs:
       run: ./build.sh
 
     - name: Publish generated content to Github Pages
-      users: JamesIves/github-pages-deploy-aactions@4.1.4
+      users: JamesIves/github-pages-deploy-actions@4.1.4
       with:
         branch: gh-pages
         folder: public
