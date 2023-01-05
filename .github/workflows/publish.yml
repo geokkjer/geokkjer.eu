@@ -1,3 +1,5 @@
+name: Publish to Github Pages
+
 on:
   push:
     branches:
@@ -10,14 +12,14 @@ jobs:
       - name: Check Out
         users: actions/checkout@v1
 
-    - name: Install Emacs
-      run: sudo apt install emacs-nox --yes
+      - name: Install Emacs
+        run: sudo apt install emacs-nox --yes
 
-    - name: Build the site
-      run: ./build.sh
+      - name: Build the site
+        run: ./build.sh
 
-    - name: Publish generated content to Github Pages
-      users: JamesIves/github-pages-deploy-actions@4.1.4
-      with:
-        branch: gh-pages
-        folder: public
+      - name: Publish generated content to Github Pages
+        users: JamesIves/github-pages-deploy-actions@4.1.4
+        with:
+          branch: gh-pages
+          folder: public
