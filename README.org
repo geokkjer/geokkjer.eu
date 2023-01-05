@@ -1,0 +1,5 @@
+* geokkjer.eu
+
+Static website made with Emacs and org-mode
+
+URL: [[https://geokkjer.github.io][live-site]]
