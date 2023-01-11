@@ -1,22 +1,225 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Hello world</title>
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
 </head>
 <body>
+<div id="preamble" class="status">
+<nav>
+    <div class="left">
+      <a href="/index.html">Home</a> |
+      <a href="/systems/index.html">Systems</a> |
+      <a href="/articles/index.html">Articles</a> |
+      <a href="/about.html">About</a> |
+      <a href="/cv.html">CV</a> |
+      <a href="/emacs/index.html">Emacs</a> |
+      <a href="/emacs/index.html">Sitemap</a> |
+      <a href="/nixos/index.html">NixOS</a>
+    </div>
+    </nav>
+</div>
 <div id="content" class="content">
-<div id="outline-container-org70afe76" class="outline-2">
-<h2 id="org70afe76">Hello world</h2>
+<header>
+<h1 class="title">Hello world</h1>
+</header><body style="background:#878f99;">
+
+<div id="outline-container-org640b094" class="outline-2">
+<h2 id="org640b094">What is this site and how was it made ?</h2>
+<div class="outline-text-2" id="text-org640b094">
+<p>
+This is an attempt to make a personal site.
+</p>
+
+
+<p>
+It was made with the design princples of <a href="https://brutalist-web.design/">Brutalist Web Design</a>.
+</p>
+</div>
+
+
+<div id="outline-container-org88f557c" class="outline-3">
+<h3 id="org88f557c">Tools</h3>
+<div class="outline-text-3" id="text-org88f557c">
+<p>
+This is where i describe the whats and whys of my tools of choiche.
+</p>
+</div>
+
+<div id="outline-container-orgca3b9a0" class="outline-4">
+<h4 id="orgca3b9a0">Emacs</h4>
+<div class="outline-text-4" id="text-orgca3b9a0">
+<p>
+In December 2022 I got Covid and while sick I discovered Emacs. The feeling was 'where have this been all my life'.
+And after watching System Crafters excellent video series about configuring Emacs from scratch I have decided to make emacs the center of my computing life.
+I use Emacs and tramp(ssh) to log into the dev server and I'll do all the coding there.
+push to git and keep a dev.geokkjer.eu to develop and experiment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd2517b0" class="outline-4">
+<h4 id="orgd2517b0">Org-mode</h4>
+<div class="outline-text-4" id="text-orgd2517b0">
+<p>
+I've made some attempts at web stuff before discovering org-mode. Mostly some attempts to make a blog with Hugo and Zola and with Python Flask and Django.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb207bb9" class="outline-4">
+<h4 id="orgb207bb9">Workflow</h4>
+<div class="outline-text-4" id="text-orgb207bb9">
+<p>
+Emacs tramp shell script and emacs build deploy to AL with nginx
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5c7054" class="outline-3">
+<h3 id="orgf5c7054">Development and Deployment</h3>
+<div class="outline-text-3" id="text-orgf5c7054">
+<p>
+This is where I describe the whats and whys of the development and deployment strategies that I use to make this site.
+</p>
+</div>
+
+<div id="outline-container-orgd1d8e5d" class="outline-4">
+<h4 id="orgd1d8e5d">Deployment</h4>
+<div class="outline-text-4" id="text-orgd1d8e5d">
+<p>
+Current state of the project.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgc699637"></a>Dev server<br>
+<div class="outline-text-5" id="text-orgc699637">
+<p>
+Arch linux with nginx with git as sort of backup.
+</p>
+
+<p>
+For now the dev server is truth.
+I'm using linode.com as a my cloud provider. They maintain an Arch image, so it is sort of easy to deploy.
+One problem I had was that the kkey-ring was outdated and I could not upgrade.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">
+pacman -Sy archlinux-keyring &amp;&amp; pacman -Su
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgbfaac4c"></a>Production<br>
+<div class="outline-text-5" id="text-orgbfaac4c">
+<p>
+fly.io static site deployment or sr.ht pages
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org994171f" class="outline-4">
+<h4 id="org994171f">Development</h4>
+<div class="outline-text-4" id="text-org994171f">
+</div>
+<ul class="org-ul">
+<li><a id="org268c444"></a>Structure<br>
+<div class="outline-text-5" id="text-org268c444">
+<p>
+like a sitemap
+</p>
+
+<p>
+Home
+</p>
+
+<ul class="org-ul">
+<li><p>
+systems
+</p>
+
+<p>
+where i keep my system configurations
+</p></li>
+
+<li><p>
+cv
+</p>
+
+<p>
+Where I keep my CV 
+</p></li>
+
+<li><p>
+blog
+</p>
+
+<p>
+Where I write about different topics in short-form
+</p></li>
+
+<li><p>
+Articles
+</p>
+
+<p>
+Where I try to write longer form technical tutorials or about topics that require more indept explanation.
+</p></li>
+
+<li><p>
+About this site
+</p>
+
+<p>
+Where I explain how and why this site exists.
+</p></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org9321029"></a>Tools<br>
+<div class="outline-text-5" id="text-org9321029">
+<p>
+A little more indept look at the tools and stuff
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb7c6a18" class="outline-2">
+<h2 id="orgb7c6a18">Sources and inspiration</h2>
+<div class="outline-text-2" id="text-orgb7c6a18">
+<p>
+Making a site like this requires the shared enthusiasm for the technology in use and of a bunch of folks.
+</p>
+
+<p>
+Here is a list of links to some of the things that inspired me along the way:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/playlist?list=PLEoMzSkcN8oNBsVT7h2Fyt4oTABckSv8j">Publishsing Websites with Org Mode</a></li>
+<li><a href="https://taingram.org/blog/org-mode-blog.html">Building a Emacs Org-Mode Blog</a></li>
+</ul>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 </div>
 </body>
 </html>

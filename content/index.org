@@ -1,3 +1,98 @@
+#+title: Hello world
+#+html: <body style="background:#878f99;">
 
-* Hello world
+* What is this site and how was it made ?
+
+This is an attempt to make a personal site.
+
+
+It was made with the design princples of [[https://brutalist-web.design/][Brutalist Web Design]].
+
+
+** Tools
+
+This is where i describe the whats and whys of my tools of choiche.
+
+*** Emacs
+
+In December 2022 I got Covid and while sick I discovered Emacs. The feeling was 'where have this been all my life'.
+And after watching System Crafters excellent video series about configuring Emacs from scratch I have decided to make emacs the center of my computing life.
+I use Emacs and tramp(ssh) to log into the dev server and I'll do all the coding there.
+push to git and keep a dev.geokkjer.eu to develop and experiment.
+
+*** Org-mode
+
+I've made some attempts at web stuff before discovering org-mode. Mostly some attempts to make a blog with Hugo and Zola and with Python Flask and Django.
+
+*** Workflow
+
+Emacs tramp shell script and emacs build deploy to AL with nginx
+
+** Development and Deployment
+
+This is where I describe the whats and whys of the development and deployment strategies that I use to make this site.
+
+*** Deployment
+
+Current state of the project.
+
+**** Dev server
+
+Arch linux with nginx with git as sort of backup.
+
+For now the dev server is truth.
+I'm using linode.com as a my cloud provider. They maintain an Arch image, so it is sort of easy to deploy.
+One problem I had was that the kkey-ring was outdated and I could not upgrade.
+
+#+begin_src shell
+
+  pacman -Sy archlinux-keyring && pacman -Su
+ 
+#+end_src
+
+**** Production
+
+fly.io static site deployment or sr.ht pages
+
+*** Development 
+
+**** Structure
+
+like a sitemap
+
+Home
+
+ - systems
+
+   where i keep my system configurations
+
+ - cv
+
+   Where I keep my CV 
+
+ - blog
+   
+   Where I write about different topics in short-form
+
+ - Articles
+
+   Where I try to write longer form technical tutorials or about topics that require more indept explanation.
+
+ - About this site
+   
+   Where I explain how and why this site exists.
+        
+**** Tools
+
+A little more indept look at the tools and stuff
+
+
+* Sources and inspiration
+
+Making a site like this requires the shared enthusiasm for the technology in use and of a bunch of folks.
+
+Here is a list of links to some of the things that inspired me along the way:
+
+- [[https://www.youtube.com/playlist?list=PLEoMzSkcN8oNBsVT7h2Fyt4oTABckSv8j][Publishsing Websites with Org Mode]]
+- [[https://taingram.org/blog/org-mode-blog.html][Building a Emacs Org-Mode Blog]]
 
