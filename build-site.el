@@ -44,9 +44,9 @@
       <a href=\"/articles/index.html\">Articles</a> |
       <a href=\"/about.html\">About</a> |
       <a href=\"/cv.html\">CV</a> |
-      <a href=\"/emacs/index.html\">Emacs</a> |
+      <a href=\"/readinglist.html\">Readinglist</a> |
       <a href=\"/emacs/index.html\">Sitemap</a> |
-      <a href=\"/nixos/index.html\">NixOS</a>
+      <a href=\"/nixos/index.html\">Code</a>
     </div>
     </nav>")
       ;; org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">")

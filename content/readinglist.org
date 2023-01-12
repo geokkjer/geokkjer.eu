@@ -1,5 +1,34 @@
 #+title: My readinglist
 
+Just a list of books I have read or want to read. Should be treated as a nightboard stand of unread books.
+
 * Technical and non-fiction
 
+I like to read and learn new technical stuff. This is whats on my agenda.
+It closly resembles my obsesisons at the moment which is computer programming(first Lisp then Haskell then idk ... Rust or Golang perhaps) and Operating Systems(Unix/Linux, NixOS, Kubernetes and Plan9).
+*And Emacs*. 
+
+- [ ] An Introduction to Programming in Emacs Lisp by Robert J. Chassell
+- [ ] [[https://htdp.org/2022-8-7/Book/index.html][How to Design Programs, Second Edition]] by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram Krishnamurthi
+- [ ] UNIX A History and a Memoir by Brian Kernighan
+- [ ] The Little Schemer by Daniel P. Friedman and Matthias Felleisen
+- [ ] The Purely Functional Software Deployment Model by Eelco Dolstra
+- [ ] Structure and Interpretation of Computer Programs by Harold Abelson and Gerald Jay Sussman with Julie Sussman
+- [ ] [[http://learnyouahaskell.com/][Learn You Haskell for Greate Good!]] by Miran Lipovača
+
 * Fiction
+
+I like to read fiction and I've done it for all my life, which is close to fifty years. But in the last couple of years I've found it hard to do, because of the state of the world. If things ever calm down I'll read more fiction.
+
+- [ ] by Kim Stanley Robertson
+* Viewing
+
+Might be ok to have a section to track some of the things I'm watching and want to watch.
+
+** Tech
+
+- [ ] [[https://www.youtube.com/playlist?list=PLE18841CABEA24090][MIT 6.001 Structure and Interpretation of Computer Programs, Spring 2005]]
+
+** Series/Films
+
+- [ ]

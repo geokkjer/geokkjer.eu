@@ -1,3 +1,32 @@
-* This is the landing page for my systems configuration
+#+title: Literal Configuration
 
-[[file:systems/laptop.org][The laptop]]
+This is some background on why and how I do my literal configurations. I am fairly new at this so expect rapid changes and redisigns.
+
+* My systems
+
+** PC's
+
+- [[file:laptop.org][The laptop a laptop]]
+- The-sober-counsel a workstation
+
+** Servers
+
+*** Home
+
+- Server1 a server running NixOS
+  - specs:
+  
+- Server2 a server running NixOS
+  - specs:
+  
+- Server3 WIP
+
+*** Cloud
+
+- geokkjer.eu a server running Arch Linux on Linode
+
+
+* Emacs
+
+-  [[file:emacs.org][My Emacs literal configuration ...]]
+
