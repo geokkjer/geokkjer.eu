@@ -1,0 +1,23 @@
+#+title: Literal Configuration
+
+
+This is some background on why and how I do my literal configurations. I am fairly new at this so expect rapid changes and redesigns.
+
+* Systems
+
+- [[file:laptop.org][The laptop a laptop]]
+  
+- [[file:work.org][The-sober-counsel a workstation]]
+
+- Server1 a server running NixOS
+  - specs:
+  
+- Server2 a server running NixOS
+  - specs:
+
+- geokkjer.eu a server running Arch Linux on Linode
+
+* Configs
+
+-  [[file:emacs.org][My Emacs literal configuration ...]]
+
