@@ -1,0 +1,31 @@
+* My laptop
+with its two cores and shared video memory
+
+#+begin_src shell
+  neofetch --stdout
+#+end_src
+
+#+RESULTS:
+| geir@the-laptop |              |                        |           |            |        |        |          |      |        |          |
+| --------------- |              |                        |           |            |        |        |          |      |        |          |
+| OS:             | NixOS        | 22.11.1705.b83e7f5a04a | (Raccoon) | x86_64     |        |        |          |      |        |          |
+| Host:           | LENOVO       | LNVNB161216            |           |            |        |        |          |      |        |          |
+| Kernel:         | 6.1.6        |                        |           |            |        |        |          |      |        |          |
+| Uptime:         | 1            | day,                   | 7         | hours,     | 42     | mins   |          |      |        |          |
+| Packages:       | 994          | (nix-system),          | 4793      | (nix-user) |        |        |          |      |        |          |
+| Shell:          | bash         | 5.1.16                 |           |            |        |        |          |      |        |          |
+| Resolution:     | 1920x1080    |                        |           |            |        |        |          |      |        |          |
+| DE:             | GNOME        | 43.2                   | (Wayland) |            |        |        |          |      |        |          |
+| WM:             | Mutter       |                        |           |            |        |        |          |      |        |          |
+| WM              | Theme:       | Adwaita                |           |            |        |        |          |      |        |          |
+| Theme:          | Adwaita-dark | [GTK2/3]               |           |            |        |        |          |      |        |          |
+| Icons:          | Arc          | [GTK2/3]               |           |            |        |        |          |      |        |          |
+| Terminal:       | emacs        |                        |           |            |        |        |          |      |        |          |
+| CPU:            | AMD          | Ryzen                  | 3         | 3250U      | with   | Radeon | Graphics | (4)  | @      | 2.600GHz |
+| GPU:            | AMD          | ATI                    | Radeon    | Vega       | Series | /      | Radeon   | Vega | Mobile | Series   |
+| Memory:         | 5533MiB      | /                      | 5814MiB   |            |        |        |          |      |        |          |
+|                 |              |                        |           |            |        |        |          |      |        |          |
+
+
+
+* 

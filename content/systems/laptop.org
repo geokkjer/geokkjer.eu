@@ -1,2 +1,10 @@
-* My beloved laptop
+* My laptop
 with its two cores and shared video memory
+
+#+begin_src shell
+  inxi -M -C
+#+end_src
+
+
+
+* 
