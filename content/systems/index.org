@@ -1,6 +1,5 @@
 #+title: Literal Configuration
 
-
 This is some background on why and how I do my literal configurations. I am fairly new at this so expect rapid changes and redesigns.
 
 * Systems

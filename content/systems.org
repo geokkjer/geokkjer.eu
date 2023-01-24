@@ -5,19 +5,210 @@ This is some background on why and how I do my literal configurations. I am fair
 
 * Systems
 
-- [[file:laptop.org][The laptop a laptop]]
-  
-- [[file:work.org][The-sober-counsel a workstation]]
+** Prep
 
-- Server1 a server running NixOS
-  - specs:
-  
-- Server2 a server running NixOS
-  - specs:
+Make your configuration. Workflow has been editing configuration.nix I've a moving to Emacs org-mode org-babel with tangle litterate configuration. I.e edit configs in Emacs and tangle them to the actual config files.
+This is my very personal prefrences, but I'll try to be very verbose so that maybe someone can  
+The following is an how-to apply readymade config to systems. The touhgt is to have a modular NixOS configuration with a base sepcific for each machine and include for services and sofware collections.
 
-- geokkjer.eu a server running Arch Linux on Linode
+** Install
+
+Download and follw the NixOS manual
+
+** Bootstrap
+
+#+begin_src shell
+
+  mkdir -p ~/
+  git clone https://dotfiles
+  rm  /etc/nixos
+  chown -R /etc/nixos
+  ln -s /etc/nixos /dotfiles
+
+  sudo nixos-rebuild boot --upgrade
+  
+#+end_src
+
+** [[file:laptop.org][The laptop a laptop]]
+
+It is a cheap 2 core AMD Lenovo laptop that came with 4 GiB of ram upgraded to 8, but with a shared video memory only 6.5 i aviliable. With these constraints I want to make something resebling a dumb terminal where most comput heavy tasks are off-loaded. Only code compile on this machine is emacs lisp to bytecode :).
+
+#+begin_src nix :tangle "configuration.nix"
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [
+   
+    ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  
+  networking.hostName = "the-laptop";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Set your time zone.
+  time.timeZone = "Europe/Oslo";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable Sway compositor
+  programs.sway.enable = true;
+
+  # Configure keymap in X11
+  services.xserver = {
+    layout = "no";
+    xkbVariant = "";
+  };
+
+  # Configure console keymap
+  console.keyMap = "no";
+
+  # Enable sound with pipewire.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  users.users.geir = {
+    isNormalUser = true;
+    description = "Geir Okkenhaug Jerstad";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      # Browsers
+      firefox google-chrome nyxt
+      # Fonts
+      fira-code fira-mono fira-code-symbols meslo-lgs-nf
+      # Gnome
+      gnome.gnome-tweaks
+      arc-icon-theme beauty-line-icon-theme
+      # tools
+      htop glances
+      # Emacs
+      emacsPackages.vterm
+      # Coding
+      mitscheme
+      racket
+      guile
+      python3Full
+      # TexLive
+      texlive.combined.scheme-full
+    ];
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+
+  environment.systemPackages = with pkgs; [
+     neovim emacs git
+     wget curl
+     neofetch inxi mlocate
+     # language servers
+     rnix-lsp
+     gopls go
+     #sway extra
+     i3status i3status-rust
+     termite rofi light
+  ];
+
+  # Turn on some experimental features for nix
+  
+  nix.settings.experimental-features = [ "nix-command" ];
+  
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  system.stateVersion = "22.11"; 
+
+}
+
+#+end_src
+
+** [[file:work.org][The-sober-counsel a workstation]]
+
+My main workstation is an somewhat ageing Threadripper 1920x 12 core first generation Ryzen box with 64 Gib of ram and a Vega 56 graphics card.  
+
+** Home-Server1 a server running NixOS
+  - cpu: ryzen 1800x
+  - motherboard:
+  - ram: 32 Gib
+  - storage:
+  - OS: NixOS
+** Home-Server2 a server running NixOS
+  - cpu: xeon 3770??
+  - motherboard:
+  - ram: 16 GiB
+  - storage: 120 Gib ssd
+  - OS: NixOS
+    
+** geokkjer.eu a server running Arch Linux on Linode
 
 * Configs
+** NixOS configs and collections
+*** Emacs
+*** nixmail
+*** Apache web server
 
--  [[file:emacs.org][My Emacs literal configuration ...]]
+*** Virt
+*** Container runtimes
+*** K8s
+
+tools:
+#+begin_src nix :tangle ~/dotfiles/nix/k8s-tools.nix
+
+#+end_src
+
+#+begin_src nix :tangle ~/dotfiles/nix/k8s-control-plane.nix
+
+#+end_src
+
+cluster context:
+#+begin_src shell
+
+#+end_src
+** [[file:emacs.org][Emacs]]
+** Bash
+
+#+begin_src shell :tangle ~/.bashrc
+
+#+end_src
+** Zsh
+
+#+begin_src nix :tangle ~/.dofiles/nix/zsh.nix
+
+#+end_src
+
+#+begin_src shell :tangle ~/.zshrc
+
+#+end_src
 

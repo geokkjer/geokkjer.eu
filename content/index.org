@@ -1,5 +1,4 @@
 #+title: Hello world
-#+html: <body style="background:#878f99;">
 
 * What is this site and how was it made ?
 
