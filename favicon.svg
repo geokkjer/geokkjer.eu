@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- stencil GOJ — geokkjer.eu — theme follows the page -->
+  <style>
+    .bg { fill: #e32213; }
+    .fg { fill: #f4f2ec; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #e8a33d; }
+      .fg { fill: #111514; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="6"/>
+  <g class="fg">
+    <!-- G -->
+    <rect x="1.5" y="10" width="3" height="12"/>
+    <rect x="1.5" y="10" width="8" height="3"/>
+    <rect x="1.5" y="19" width="8" height="3"/>
+    <rect x="6.5" y="16" width="3" height="6"/>
+    <!-- O -->
+    <rect x="12" y="10" width="3" height="12"/>
+    <rect x="17" y="10" width="3" height="12"/>
+    <rect x="12" y="10" width="8" height="3"/>
+    <rect x="12" y="19" width="8" height="3"/>
+    <!-- J -->
+    <rect x="22.5" y="10" width="8" height="3"/>
+    <rect x="27.5" y="10" width="3" height="9"/>
+    <rect x="22.5" y="19" width="8" height="3"/>
+  </g>
+</svg>
