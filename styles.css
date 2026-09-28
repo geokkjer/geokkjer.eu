@@ -1,0 +1,343 @@
+/* ============================================================
+   geokkjer.eu — swiss datasheet, dual theme
+   light: ruled paper, hairlines, swiss red
+   dark:  console charcoal, hairlines, phosphor amber
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  --bg-page: #f4f2ec;
+  --bg-sheet: #f4f2ec;
+  --ink: #141414;
+  --body-soft: #33312c;
+  --dim: #6d6a62;
+  --rule: #141414;
+  --rule-soft: rgba(20, 20, 20, 0.16);
+  --accent: #e32213;
+  --status: #e32213;
+  --grid-line: rgba(20, 20, 20, 0.034);
+  --photo-filter: grayscale(100%) sepia(0.28) contrast(1.05);
+  --sheet-shadow: none;
+  --sel-bg: #e32213;
+  --sel-fg: #f4f2ec;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-page: #0b0e0d;
+  --bg-sheet: #111514;
+  --ink: #e4e1d5;
+  --body-soft: #b3b0a4;
+  --dim: #8a918b;
+  --rule: #39423d;
+  --rule-soft: rgba(228, 225, 213, 0.18);
+  --accent: #e8a33d;
+  --status: #79b473;
+  --grid-line: rgba(228, 225, 213, 0.028);
+  --photo-filter: grayscale(100%) sepia(0.34) contrast(1.02) brightness(0.9);
+  --sheet-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  --sel-bg: #e8a33d;
+  --sel-fg: #0b0e0d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg-page);
+  /* engineering graph-paper */
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 8px 8px;
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: clamp(0.75rem, 2.5vw, 2.5rem);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection { background: var(--sel-bg); color: var(--sel-fg); }
+
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- sheet ---------- */
+
+.sheet {
+  max-width: 68rem;
+  margin-inline: auto;
+  border: 2px solid var(--rule);
+  background: var(--bg-sheet);
+  box-shadow: var(--sheet-shadow);
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-bottom: 2px solid var(--rule);
+}
+
+.doc-no {
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-family: "Archivo", sans-serif;
+  font-variation-settings: "wdth" 110;
+  font-weight: 800;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.role {
+  margin-top: 1rem;
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.9rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.8rem;
+}
+
+.masthead-fig { align-self: start; }
+
+.masthead-fig img {
+  display: block;
+  width: clamp(8rem, 16vw, 11.5rem);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 2px solid var(--rule);
+  filter: var(--photo-filter);
+}
+
+.masthead-fig figcaption {
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--dim);
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+/* ---------- meta strip ---------- */
+
+.metastrip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  padding: 0.6rem clamp(1.5rem, 4vw, 3rem);
+  border-bottom: 2px solid var(--rule);
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.metastrip .status { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--status); }
+.metastrip .status i {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--status);
+  animation: blink 2.4s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.25; } }
+
+.theme-toggle {
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- columns ---------- */
+
+.columns {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+}
+
+/* left rail */
+
+.rail {
+  border-right: 2px solid var(--rule);
+  padding: clamp(1.5rem, 3vw, 2.5rem) 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rail-label {
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.toc { display: flex; flex-direction: column; }
+
+.toc a {
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  display: flex;
+  justify-content: space-between;
+  transition: color 0.12s ease, padding-left 0.12s ease;
+}
+
+.toc a span { color: var(--accent); }
+.toc a:hover { color: var(--accent); padding-left: 0.35rem; }
+
+.rail-value {
+  font-family: "Archivo", sans-serif;
+  font-variation-settings: "wdth" 76;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.chips { font-family: "Chivo Mono", monospace; font-size: 0.78rem; line-height: 2; color: var(--ink); }
+
+/* right content */
+
+.content { padding: clamp(1.5rem, 3.5vw, 3rem); min-width: 0; }
+
+.content section + section {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid var(--rule);
+}
+
+.content h2 {
+  font-family: "Chivo Mono", monospace;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+}
+
+.content h2 em { font-style: normal; color: var(--accent); }
+
+.big { font-size: 1.15rem; max-width: 42rem; }
+.big + .big { margin-top: 0.8rem; }
+.big strong { font-weight: 700; }
+
+.content a, .big a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+.content a:hover, .big a:hover { color: var(--accent); }
+
+/* ---------- spec tables ---------- */
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.spec-table tr { border-top: 1px solid var(--rule); }
+.spec-table tr:last-child { border-bottom: 1px solid var(--rule); }
+
+.spec-table th {
+  text-align: left;
+  font-family: "Chivo Mono", monospace;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 0.85rem 1.5rem 0.85rem 0;
+  vertical-align: top;
+}
+
+.spec-table th a { text-decoration: none; border-bottom: 1.5px solid var(--accent); }
+.spec-table th a:hover { color: var(--accent); }
+
+.spec-table td {
+  padding: 0.85rem 0;
+  vertical-align: top;
+  color: var(--body-soft);
+}
+
+.spec-table td.lang {
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--dim);
+  text-align: right;
+  white-space: nowrap;
+  padding-left: 1.5rem;
+}
+
+/* ---------- footer ---------- */
+
+.sheetfoot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  border-top: 2px solid var(--rule);
+  padding: 0.6rem clamp(1.5rem, 4vw, 3rem);
+  font-family: "Chivo Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--dim);
+}
+
+.sheetfoot span:first-child { color: var(--accent); }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 780px) {
+  .columns { grid-template-columns: 1fr; }
+  .rail {
+    border-right: none;
+    border-bottom: 2px solid var(--rule);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+  }
+  .rail > * { flex: 1 1 12rem; }
+  .masthead { grid-template-columns: 1fr; }
+  .masthead-fig { order: -1; }
+  .spec-table th { display: block; padding-bottom: 0.2rem; white-space: normal; }
+  .spec-table td { display: block; padding-top: 0; }
+  .spec-table td.lang { text-align: left; padding-left: 0; padding-bottom: 1rem; }
+  .spec-table tr { display: block; padding: 0.6rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

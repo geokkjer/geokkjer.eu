@@ -1,2 +1,0 @@
-#+title: Curiculum Vitae
-#+author: Geir Okkenhaug Jerstad

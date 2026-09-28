@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geir Okkenhaug Jerstad — Engineer &amp; Instructor</title>
+<meta name="description" content="Geir Okkenhaug Jerstad — instructor at Get Academy, Linux, NixOS, DevOps. Kristiansand, Norway.">
+
+<script>
+  /* set theme before first paint — no flash */
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem("theme"); } catch (e) {}
+    var dark = stored ? stored === "dark"
+                      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,700;62..125,800&family=Chivo+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- masthead -->
+  <header class="masthead">
+    <div class="masthead-main">
+      <p class="doc-no">SPEC / GEO-JERSTAD / REV 2026.09</p>
+      <h1>Geir<br>Okkenhaug<br>Jerstad</h1>
+      <p class="role">Instructor — Get Academy</p>
+    </div>
+    <figure class="masthead-fig">
+      <img src="profile.jpg" alt="Portrait of Geir Okkenhaug Jerstad" width="200" height="260">
+      <figcaption>FIG. 1 — THE OPERATOR</figcaption>
+    </figure>
+  </header>
+
+  <!-- meta strip -->
+  <div class="metastrip">
+    <span>KRISTIANDSAND, NO — 58.15°N 8.0°E</span>
+    <span>COMPUTING SINCE 1985</span>
+    <span class="status"><i aria-hidden="true"></i>ACTIVE</span>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme"></button>
+  </div>
+
+  <div class="columns">
+
+    <!-- left rail: fixed meta -->
+    <aside class="rail">
+      <nav class="toc" aria-label="Elsewhere">
+        <p class="rail-label">ELSEWHERE</p>
+        <a href="https://github.com/geokkjer">GitHub <span>↗</span></a>
+        <a href="https://git.sr.ht/~geokkjer">Sourcehut <span>↗</span></a>
+        <a href="https://blog.geokkjer.eu">Blog <span>↗</span></a>
+        <a href="https://hachyderm.io/@geokkjer">Mastodon <span>↗</span></a>
+        <a href="https://www.linkedin.com/in/geir-okkenhaug-jerstad-bb09a271/">LinkedIn <span>↗</span></a>
+      </nav>
+
+      <div class="rail-block">
+        <p class="rail-label">APERTURE</p>
+        <p class="rail-value">From Commodore 64<br>to NixOS.</p>
+      </div>
+
+      <div class="rail-block">
+        <p class="rail-label">MEDIA</p>
+        <p class="chips">Linux / NixOS / DevOps / Vue / TypeScript / Rust / Lua / Emacs / IT-security</p>
+      </div>
+    </aside>
+
+    <!-- right column: sections -->
+    <main class="content">
+
+      <section aria-labelledby="s1">
+        <h2 id="s1"><em>01</em> — CURRENT OPERATION</h2>
+        <p class="big">Teaching the frontend course at <strong>Get Academy</strong>: Vue for production habits, frameworkless JavaScript so students see the seams in the abstraction. Also running the devops module on the backend course.</p>
+        <p class="big">On the bench at home: <a href="https://github.com/geokkjer/sound-arranger">sound-arranger</a>, an audio platform where everything is a plugin, and a home lab being rebuilt on NixOS flakes.</p>
+      </section>
+
+      <section aria-labelledby="s2">
+        <h2 id="s2"><em>02</em> — BUILDS</h2>
+        <table class="spec-table">
+          <tbody>
+            <tr>
+              <th scope="row"><a href="https://github.com/geokkjer/sound-arranger">sound-arranger</a></th>
+              <td>Audio platform where everything is a plugin. Minimal Rust core, everything else flows through it.</td>
+              <td class="lang">RUST</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/geokkjer/dsh-subagent-opencode">dsh-subagent-opencode</a></th>
+              <td>One-shot OpenCode subagent provider for DeepSeek Harness.</td>
+              <td class="lang">JS</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/geokkjer/dsh-selfup">dsh-selfup</a></th>
+              <td>Self-update, install and systemd tooling for DeepSeek Harness.</td>
+              <td class="lang">JS</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/geokkjer/dsh-peak">dsh-peak</a></th>
+              <td>Live peak/off-peak pricing indicator for DeepSeek, in the composer.</td>
+              <td class="lang">JS</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/geokkjer/cliamp-plugin-listenbrainz">cliamp-plugin-listenbrainz</a></th>
+              <td>Scrobble cliamp playback to ListenBrainz. Zero noise.</td>
+              <td class="lang">LUA</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/geokkjer/agent-skills">agent-skills</a></th>
+              <td>Skills for Agent Skills-compatible harnesses — research, programming, elisp, unslop.</td>
+              <td class="lang">NIX</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://github.com/geokkjer/dotfiles">dotfiles</a></th>
+              <td>Flakes, NixOS modules and Emacs. The machine I actually use.</td>
+              <td class="lang">NIX</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="s3">
+        <h2 id="s3"><em>03</em> — SERVICE RECORD</h2>
+        <table class="spec-table">
+          <tbody>
+            <tr>
+              <th scope="row">NOW</th>
+              <td><strong>Get Academy</strong> — Instructor, frontend &amp; devops. Kristiansand.</td>
+            </tr>
+            <tr>
+              <th scope="row">2023</th>
+              <td><strong>Netsecurity AS</strong> — SOC/SOAR alert analysis, 1st/2nd line support, Windows 365 admin.</td>
+            </tr>
+            <tr>
+              <th scope="row">2019–2020</th>
+              <td><strong>Noroff</strong> — Higher vocational degree, network &amp; IT-security.</td>
+            </tr>
+            <tr>
+              <th scope="row">2000–2018</th>
+              <td><strong>Lund Kiosk AS</strong> — Owner, daily operations. Eighteen years of retail before the pivot.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="s4">
+        <h2 id="s4"><em>04</em> — OFF HOURS</h2>
+        <p class="big">Code, hiking, reading, gaming. The order changes with the season.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="sheetfoot">
+    <span>FROM COMMODORE 64 TO NIXOS</span>
+    <span>BUILT BY HAND — HTML / CSS</span>
+    <span>GITHUB PAGES</span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById("theme-toggle");
+    var root = document.documentElement;
+
+    function paint() {
+      var dark = root.dataset.theme === "dark";
+      btn.textContent = dark ? "LIGHT ◐" : "DARK ◐";
+      btn.setAttribute("aria-pressed", String(dark));
+    }
+
+    btn.addEventListener("click", function () {
+      var next = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      paint();
+    });
+
+    paint();
+  })();
+</script>
+
+</body>
+</html>
