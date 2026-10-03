@@ -97,7 +97,7 @@ h1 {
   font-family: "Archivo", sans-serif;
   font-variation-settings: "wdth" 110;
   font-weight: 800;
-  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-size: clamp(2.2rem, 7vw, 5.5rem);
   line-height: 0.92;
   letter-spacing: -0.025em;
   text-transform: uppercase;
@@ -128,7 +128,7 @@ h1 {
   letter-spacing: 0.14em;
   color: var(--dim);
   margin-top: 0.5rem;
-  text-align: right;
+  text-align: center;
 }
 
 /* ---------- meta strip ---------- */
@@ -331,7 +331,7 @@ h1 {
   }
   .rail > * { flex: 1 1 12rem; }
   .masthead { grid-template-columns: 1fr; }
-  .masthead-fig { order: -1; }
+  .masthead-fig { order: -1; justify-self: center; }
   .spec-table th { display: block; padding-bottom: 0.2rem; white-space: normal; }
   .spec-table td { display: block; padding-top: 0; }
   .spec-table td.lang { text-align: left; padding-left: 0; padding-bottom: 1rem; }
